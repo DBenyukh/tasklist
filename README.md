@@ -40,16 +40,21 @@
     created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
     updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
    );
+   ``` 
+4. **Настройте переменные окружения**
+
+   Создайте в основном каталоге файл `.env` и поместить в него следующий код:
    ```
-4. **Создать в основном каталоге файл ".env" и поместить в него следующий код:**
-   ```
-   DB_URI=postgres://user:password@localhost:5432/yourdatabase
-   WEB_ADDR=localhost:8090
+    DB_URI=postgres://user:password@localhost:5432/yourdatabase
+    WEB_ADDR=localhost:8090
    ```
    В строке: ```DB_URI=postgres://user:password@localhost:5432/yourdatabase```
-   необходимо заменить **user**, **password**, **yourdatabase** и адрес (**localhost:5432**) на свои.
+    
+   необходимо заменить `user`, `password`, `yourdatabase` и адрес (`localhost:5432`) на свои.
 
-5. **Запустите сервер**\
+
+5. **Запустите сервер**
+
    В корневом каталоге проекта выполните команду:
    ```
    go run main.go
