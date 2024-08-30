@@ -41,7 +41,7 @@
     updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
    );
    ```
-4. **Создать в основном каталоге файл ".env" и поместить код**
+4. **Создать в основном каталоге файл ".env" и поместить в него следующий код:**
    ```
    DB_URI=postgres://user:password@localhost:5432/yourdatabase
    WEB_ADDR=localhost:8090
