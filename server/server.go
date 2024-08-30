@@ -4,7 +4,9 @@ import (
 	"context"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
+	"log"
 	"sync"
+	"tasklist/env"
 )
 
 func Start(ctx context.Context, wg *sync.WaitGroup) {
@@ -20,5 +22,14 @@ func Start(ctx context.Context, wg *sync.WaitGroup) {
 		// Роуты
 		Routes(e)
 
+		// Старт сервера
+		addr := env.GetWebAddr()
+		if addr == "" {
+			addr = ":8080"
+		}
+
+		if err := e.Start(addr); err != nil {
+			log.Fatalf("Failed to start server: %v", err)
+		}
 	}()
 }
